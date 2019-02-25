@@ -261,7 +261,7 @@ message.channel.sendEmbed(embed)
 });
 
  client.on('message', message => {
-    if (message.content === ('-bot')) {
+    if (message.content === ('/bot')) {
     message.channel.send({
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
@@ -2447,7 +2447,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-    if (message.content.startsWith("-رابط")) {
+    if (message.content.startsWith("/رابط")) {
         message.channel.createInvite({
         thing: true,
         maxUses: 5,
@@ -2884,7 +2884,7 @@ client.on('message', message => {    ///Toxic Codes
 
 
 client.on('message', message => {       ///Toxic Codes
-    if (message.content === "-id") {    ///Toxic Codes
+    if (message.content === "/id") {    ///Toxic Codes
     var year = message.createdAt.getFullYear()
     var month = message.createdAt.getMonth()
     var day = message.createdAt.getDate()
@@ -2903,4 +2903,9 @@ client.on('message', message => {       ///Toxic Codes
         }
     }); ///Toxic Codes
 
+client.on('message', msg => {
+    if(msg.content === '/help')
+    msg.reply('تم الارسال في الخاص :white_check_mark:')
+  });
+  
 client.login(process.env.BOT_TOKEN)
